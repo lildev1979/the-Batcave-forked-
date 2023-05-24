@@ -1,0 +1,130 @@
+.LandingPage-BackGround {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: 90%;
+  overflow: hidden;
+}
+
+.LandingPage-BackGround::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  z-index: -1;
+  background-image: url("../../public/Images/batcave.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.06;
+  animation: BackgroundMotion 120s linear infinite running;
+}
+
+@keyframes BackgroundMotion {
+  0% {
+    transform: scale(2) rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg) scale(1);
+  }
+  100% {
+    transform: rotate(360deg) scale(2);
+  }
+}
+
+.LandingPage-Body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.LandingPage-Center {
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInButton {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+.LandingPage-Message {
+  color: white;
+  animation: fadeIn 2s linear;
+}
+
+.LandingPage-Button {
+  font-family: Montserrat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  background: linear-gradient(
+    53deg,
+    rgba(29, 34, 37, 0.897) 0%,
+    rgba(69, 62, 65, 1) 25%,
+    rgb(39, 38, 38) 75%,
+    rgba(50, 55, 75, 0.99) 100%
+  );
+  width: 50%;
+  align-self: center;
+  font-size: 30px;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 2px 6px rgba(20, 20, 20, 0.6);
+  transition: all 0.5s;
+  opacity: 0.8;
+  animation: fadeInButton 2s linear;
+  text-decoration: none;
+}
+
+.LandingPage-Button:hover {
+  box-shadow: 0px 1px 2px 1px rgba(20, 20, 20, 0.6);
+  opacity: 1;
+}
+
+.LandingPage-Button:active {
+  background: linear-gradient(
+    53deg,
+    rgba(69, 62, 65, 1) 0%,
+    rgba(29, 34, 37, 0.897) 25%,
+    rgba(23, 46, 65, 0.896796218487395) 75%,
+    rgb(39, 38, 38) 100%
+  );
+}

@@ -1,0 +1,21 @@
+.CELL {
+  width: 60px;
+  height: 60px;
+  box-shadow: inset 1px 2px 2px -1px darkgrey;
+}
+
+@media only screen and (max-width: 400px) {
+  .CELL {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.CELL.Active {
+  background-color: white;
+  box-shadow: inset 1px 2px 5px -1px black;
+}
+
+.CELL:hover {
+  cursor: pointer;
+}

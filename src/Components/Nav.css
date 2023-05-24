@@ -1,0 +1,107 @@
+.Nav-Container {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  height: 50px;
+  transition: background 1000ms linear;
+  color: white;
+  padding: 5px 10px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+.Nav-Container.Active::before {
+  background: linear-gradient(
+    53deg,
+    rgba(69, 62, 65, 1) 13%,
+    rgba(23, 46, 65, 0.896796218487395) 94%
+  );
+  box-shadow: 0px 1px 2px 1px rgba(20, 20, 20, 0.6);
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+  opacity: 0;
+}
+
+.Nav-Container.Active::before {
+  animation: changeBackground 0.2s linear;
+  animation-fill-mode: forwards;
+}
+
+.Nav-Container:hover:before {
+  animation: changeBackground 0.2s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes changeBackground {
+  0% {
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.Nav-Logo {
+  min-height: 40px;
+  min-width: 40px;
+  background-repeat: no-repeat;
+  background-image: url("../../public/Images/bathat.png");
+  background-position: center;
+  background-size: contain;
+}
+.Nav-Links {
+  flex-grow: 1;
+}
+.Nav-Link-List {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0;
+  align-items: flex-start;
+  gap: 10px;
+  margin-right: 10px;
+}
+
+.Nav-Link {
+  list-style: none;
+  padding: 5px;
+}
+
+.Nav-Link > a {
+  text-decoration: none;
+  color: white;
+  position: relative;
+}
+
+.Nav-Link > a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  border-bottom: 2px solid white;
+}
+
+.Nav-Link > a:hover::after {
+  animation: grow 0.2s ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes grow {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}

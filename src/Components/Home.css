@@ -1,0 +1,12 @@
+.Home {
+  padding-top: 30px;
+  height: 150%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.Home-Title {
+  margin: 0;
+  padding-top: 20px;
+  color: whitesmoke;
+}
